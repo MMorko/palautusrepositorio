@@ -17,7 +17,7 @@ def main():
     print("Oliot:")
 
     suomalaiset = [player for player in players if player.nationality == "FIN"]
-    for player in suomalaiset:
+    for player in sorted(suomalaiset, key=lambda p: p.goals + p.assists, reverse=True):
         print(player)
 
 
