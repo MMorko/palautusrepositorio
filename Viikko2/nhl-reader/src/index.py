@@ -6,8 +6,7 @@ def main():
     stats = PlayerStats(reader)
     players = stats.top_scorers_by_nationality("FIN")
 
-    for player in players:
-        print(player)
+    stats.display_players(players)
 
 
 if __name__ == "__main__":
