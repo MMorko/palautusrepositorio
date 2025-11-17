@@ -79,6 +79,18 @@ def handle_register():
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
 
+    if len(username) < 3:
+        flash("Username must be at least 3 characters long")
+        return redirect_to_register()
+    
+    if len(password) < 8 or password.isalpha():
+        flash("Password must be at least 8 characters long and not be entirely letters")
+        return redirect_to_register()
+    
+    if password != password_confirmation:
+        flash("Password and password confirmation do not match")
+        return redirect_to_register()
+
     try:
         user_service.create_user(username, password, password_confirmation)
         return redirect_to_welcome()
