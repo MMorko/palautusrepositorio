@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-17T21:59:15.631554" rpa="false" schemaversion="5">
+<suite id="s1" name="Register" source="C:\Users\atosi\palautusrepositorio\viikko3\login\src\tests\register.robot">
+<kw name="Open And Configure Browser" owner="resource" type="SETUP">
+<if>
+<branch type="IF" condition="$BROWSER == 'chrome'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-11-17T21:59:15.839408" elapsed="0.000028"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2025-11-17T21:59:15.839536" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-11-17T21:59:15.838890" elapsed="0.000705"/>
+</branch>
+<branch type="ELSE IF" condition="$BROWSER == 'firefox'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-17T21:59:15.839954" level="INFO">${options} = &lt;selenium.webdriver.firefox.options.Options object at 0x000001CF65AC9400&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-17T21:59:15.839748" elapsed="0.000230"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--private-window</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-11-17T21:59:15.840046" elapsed="0.000094"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:15.839627" elapsed="0.000547"/>
+</branch>
+<status status="PASS" start="2025-11-17T21:59:15.838864" elapsed="0.001338"/>
+</if>
+<if>
+<branch type="IF" condition="$HEADLESS == 'true'">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.05 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" start="2025-11-17T21:59:15.840353" elapsed="0.000018"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2025-11-17T21:59:15.840429" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2025-11-17T21:59:15.840244" elapsed="0.000228"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-17T21:59:15.840551" elapsed="0.000148"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:15.840495" elapsed="0.000236"/>
+</branch>
+<status status="PASS" start="2025-11-17T21:59:15.840232" elapsed="0.000521"/>
+</if>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:15.840972" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-17T21:59:15.840816" elapsed="4.946076"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:15.838700" elapsed="4.948319"/>
+</kw>
+<test id="s1-t1" name="Register With Valid Username And Invalid Password" line="27">
+<kw name="Reset Application Create User And Go To Register Page" type="SETUP">
+<kw name="Reset Application" owner="AppLibrary">
+<status status="PASS" start="2025-11-17T21:59:20.788076" elapsed="2.042988"/>
+</kw>
+<kw name="Create User" owner="AppLibrary">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<status status="PASS" start="2025-11-17T21:59:22.831237" elapsed="4.081778"/>
+</kw>
+<kw name="Go To Register Page" owner="resource">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:26.913684" level="INFO">Opening url 'http://localhost:5001/register'</msg>
+<arg>${REGISTER_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-17T21:59:26.913551" elapsed="0.542623"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:26.913284" elapsed="0.543027"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:20.787780" elapsed="6.668591"/>
+</kw>
+<kw name="Set Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:27.457339" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T21:59:27.456978" elapsed="1.524415"/>
+</kw>
+<arg>kalle</arg>
+<status status="PASS" start="2025-11-17T21:59:27.456693" elapsed="1.524815"/>
+</kw>
+<kw name="Set Password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:28.982198" level="INFO">Typing password into text field 'password'.</msg>
+<msg time="2025-11-17T21:59:29.987203" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T21:59:28.982027" elapsed="1.511623"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:30.494042" level="INFO">Typing password into text field 'password_confirmation'.</msg>
+<msg time="2025-11-17T21:59:31.498893" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password_confirmation</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T21:59:30.493832" elapsed="1.511554"/>
+</kw>
+<arg>**</arg>
+<status status="PASS" start="2025-11-17T21:59:28.981770" elapsed="3.023736"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:32.005987" level="INFO">Clicking button 'Register'.</msg>
+<arg>Register</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T21:59:32.005772" elapsed="2.031302"/>
+</kw>
+<kw name="Register Should Fail With Message">
+<kw name="Register Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:34.539358" level="INFO">Page title is 'Register'.</msg>
+<arg>Register</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-17T21:59:34.037818" elapsed="0.501633"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:34.037676" elapsed="0.501855"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T21:59:35.543406" level="INFO">Current page contains text 'Password must be at least 8 characters long and not be entirely letters'.</msg>
+<arg>${message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T21:59:34.539641" elapsed="1.003889"/>
+</kw>
+<arg>Password must be at least 8 characters long and not be entirely letters</arg>
+<status status="PASS" start="2025-11-17T21:59:34.037425" elapsed="1.506206"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:20.787110" elapsed="14.756754"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-17T21:59:35.544724" elapsed="3.072500"/>
+</kw>
+<status status="PASS" start="2025-11-17T21:59:15.632691" elapsed="22.984606"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Register" id="s1" pass="1" fail="0" skip="0">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
