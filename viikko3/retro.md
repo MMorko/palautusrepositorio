@@ -1,0 +1,5 @@
+Retrospektiivitekniikat ovat tiimeille/ryhmille suunniteltuja harjoituksia, jossa käydään viimeisintä sprinttiä läpi. Harjoitusten idea on saada osallistujilta palautetta menneestä sprintistä ja heidän ajatuksia/mielipiteitä siitä. Harjoitusten rakenne tyypillisesti koostuu kysymyksistä, joissa kysytään mitä ongelmia, onnistumisia, mitä toimia, mikä ei, mitä enemmän, mitä vähemmän yms. Harjoituksiin kuluva aika riippuu suuresti ryhmän koosta ja kuinka pitkää aikaväliä halutaan tutkia retrospektiivisesti.  
+  
+Start, Stop, Continue, More of, Less of Wheel on yksi retrospektiivitekniikka, jossa nimen mukaisesti käydään läpi pyörä, jossa on vuorotellen yksi aiheista. Aiheet käydään vuorotellen läpi ja vuoron aikana kerrotaan esim. Mitä tulisi tehdä enemmän. Tähän harjoitukseen kuluva aika on noin 10-25 minuuttia, riippuen ryhmän koosta.  
+  
+Glad, Sad, Mad on hieman yksikertaisempi retrospektiivitekniikka, jossa käydään aiheen mukaisesti läpi, mikä onnistui sprintin aikana (glad), mikä ei onnistunut (sad) ja mitä ongelmia ilmeni (mad).  Tähän harjoitukseen voi kulua jopa 60 minuuttia, mutta riippuu suuresti ryhmän koosta. 
